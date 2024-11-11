@@ -1,0 +1,46 @@
+.buttonContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.buttonPrev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    border-radius: 50px;
+    border: 1px solid #808080;
+    padding: 11px 17px;
+    color: #808080;
+    font-size: 1.5em;
+    font-family: Monospace;
+}
+
+.buttonPrev:hover {
+    box-shadow: 10px 10px 40px #d1d1d1;
+    transform: translateY(-2px);
+    color: rgba(0, 0, 0, 0.559);
+    border: 2px solid rgba(0, 0, 0, 0.559);
+}
+
+.buttonNext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    border-radius: 50px;
+    border: 1px solid whitesmoke;
+    padding: 11px 17px;
+    color: whitesmoke;
+    font-size: 1.5em;
+    font-family: Monospace;
+    background-color: black;
+}
+
+.buttonNext:hover {
+    box-shadow: 10px 10px 40px #d1d1d1;
+    transform: translateY(-2px);
+    border: 2px solid white;
+}
