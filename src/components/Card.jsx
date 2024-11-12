@@ -26,14 +26,16 @@ export const Card = () => {
     console.log("card current", currentCardData);
 
     return (
-        <section className={styles.cardSection}>
-            <div className={styles.card}>
+        <section className={styles.card}>
+            <div className={styles.cardImageSection}>
                 <img
                     className={styles.cardImage}
                     src={currentCardData.image}
                     alt={currentCardData.alt}
                     style={{ backgroundColor: currentCardData.bgColor }}
                 />
+            </div>
+            <div className={styles.cardTextSection}>
                 <div className={styles.cardTitle}>
                     <strong>{currentCardData.title}</strong>
                 </div>
@@ -41,8 +43,16 @@ export const Card = () => {
                     <span>{currentCardData.description}</span>
                 </div>
             </div>
+            <div className={styles.cardButtonsSection}>
+                <div className={styles.cardIndicators}>
+                <p>Indicators</p>
+                </div>
+                <div className={styles.cardButtons}>
+                    <Buttons onNext={handleClickNext} onPrevious={handleClickPrevious} />
+                </div>
+            </div>
 
-            <Buttons onNext={handleClickNext} onPrevious={handleClickPrevious} />
+
 
         </section>
     );

@@ -1,0 +1,64 @@
+body{
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: auto;
+    margin-top: 3rem;
+    margin-inline: auto;
+    border-radius: 3%;
+    background-color: transparent;
+    box-shadow: 10px 10px 40px #d1d1d1;
+}
+
+.cardImageSection {
+    display: flex;
+    flex-direction: row;
+    height: 25rem;
+    width:auto;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+}
+
+.cardImage {
+    padding: 2rem;
+    width: -webkit-fill-available;
+    height: auto;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+}
+
+.cardTextSection {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.cardTitle {
+    font-size: large;
+}
+
+.cardInfo {
+    padding-top: 0.5rem;
+    color: rgb(86, 85, 85);
+}
+
+.cardButtonsSection {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cardIndicators {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+.cardButtons {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+}

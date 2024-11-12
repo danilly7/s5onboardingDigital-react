@@ -15,13 +15,13 @@
     color: #808080;
     font-size: 1.5em;
     font-family: Monospace;
+    background-color: #efebebf4;
 }
 
 .buttonPrev:hover {
     box-shadow: 10px 10px 40px #d1d1d1;
-    transform: translateY(-2px);
-    color: rgba(0, 0, 0, 0.559);
-    border: 2px solid rgba(0, 0, 0, 0.559);
+    background-color: whitesmoke;
+    border: 1px solid rgba(0, 0, 0, 0.559);
 }
 
 .buttonNext {
@@ -40,7 +40,7 @@
 }
 
 .buttonNext:hover {
-    box-shadow: 10px 10px 40px #d1d1d1;
-    transform: translateY(-2px);
-    border: 2px solid white;
+    box-shadow: 10px 10px 40px white;
+    background-color: #808080;
+    border: 1px solid white;
 }
