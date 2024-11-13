@@ -1,4 +1,4 @@
-import styles from './Indicators.module.css'
+import styles from './Indicators.module.css';
 
 export const IndicatorCurrent = () => {
     return (

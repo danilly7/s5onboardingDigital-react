@@ -54,7 +54,6 @@ body {
 .cardIndicators {
     display: flex;
     flex-direction: row;
-    gap: 5px;
     justify-content: flex-start;
     align-items: center;
 }

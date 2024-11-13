@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import styles from './Indicators.module.css'
+import styles from './Indicators.module.css';
 
 export const IndicatorPrevious = ({ step, onPrevious }) => {
     const handleClickPreviousIndicator = () => {
