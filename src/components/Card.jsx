@@ -1,8 +1,11 @@
 import styles from './Card.module.css';
 import { tutorialData } from "../data/tutorialData";
 import { useState } from 'react';
-import { Buttons } from "./Buttons";
-
+import { ButtonNext } from './ButtonNext';
+import { ButtonPrevious } from './ButtonPrevious';
+import { IndicatorCurrent } from './IndicatorCurrent';
+import { IndicatorNext } from './IndicatorNext';
+import { IndicatorPrevious } from './IndicatorPrevious';
 
 export const Card = () => {
 
@@ -23,7 +26,6 @@ export const Card = () => {
     };
 
     const currentCardData = tutorialData[step];
-    console.log("card current", currentCardData);
 
     return (
         <section className={styles.card}>
@@ -43,17 +45,42 @@ export const Card = () => {
                     <span>{currentCardData.description}</span>
                 </div>
             </div>
-            <div className={styles.cardButtonsSection}>
-                <div className={styles.cardIndicators}>
-                <p>Indicators</p>
+
+            {step === 0 ? (
+                <div className={styles.cardButtonsIndicatorsSection}>
+                    <div className={styles.cardIndicators}>
+                        <IndicatorCurrent />
+                        <IndicatorNext onNext={handleClickNext} />
+                        <IndicatorNext step={2} onNext={handleClickNext} />
+                    </div>
+                    <div className={styles.cardButtons}>
+                        <ButtonNext onNext={handleClickNext} />
+                    </div>
                 </div>
-                <div className={styles.cardButtons}>
-                    <Buttons onNext={handleClickNext} onPrevious={handleClickPrevious} />
+            ) : step === 1 ? (
+                <div className={styles.cardButtonsIndicatorsSection}>
+                    <div className={styles.cardIndicators}>
+                        <IndicatorPrevious onPrevious={handleClickPrevious} />
+                        <IndicatorCurrent />
+                        <IndicatorNext onNext={handleClickNext} />
+                    </div>
+                    <div className={styles.cardButtons}>
+                        <ButtonPrevious onPrevious={handleClickPrevious} />
+                        <ButtonNext onNext={handleClickNext} />
+                    </div>
                 </div>
-            </div>
-
-
-
-        </section>
+            ) : (
+                <div className={styles.cardButtonsIndicatorsSection}>
+                    <div className={styles.cardIndicators}>
+                        <IndicatorPrevious step={0} onPrevious={handleClickPrevious} />
+                        <IndicatorPrevious onPrevious={handleClickPrevious} />
+                        <IndicatorCurrent />
+                    </div>
+                    <div className={styles.cardButtons}>
+                        <ButtonPrevious onPrevious={handleClickPrevious} />
+                    </div>
+                </div>
+            )}
+        </section >
     );
 };

@@ -1,9 +1,4 @@
-.buttonContainer {
-    display: flex;
-    gap: 10px;
-}
-
-.buttonPrev {
+.buttonPrevious {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,10 +10,10 @@
     color: #808080;
     font-size: 1.5em;
     font-family: Monospace;
-    background-color: #efebebf4;
+    background-color: #e7e1e1c3;
 }
 
-.buttonPrev:hover {
+.buttonPrevious:hover {
     box-shadow: 10px 10px 40px #d1d1d1;
     background-color: whitesmoke;
     border: 1px solid rgba(0, 0, 0, 0.559);

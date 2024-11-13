@@ -1,4 +1,4 @@
-body{
+body {
     font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
@@ -18,7 +18,7 @@ body{
     display: flex;
     flex-direction: row;
     height: 25rem;
-    width:auto;
+    width: auto;
     border-top-left-radius: 3%;
     border-top-right-radius: 3%;
 }
@@ -44,7 +44,7 @@ body{
     color: rgb(86, 85, 85);
 }
 
-.cardButtonsSection {
+.cardButtonsIndicatorsSection {
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: row;
@@ -53,12 +53,16 @@ body{
 
 .cardIndicators {
     display: flex;
-    flex-direction: column;
-    align-content: flex-start;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .cardButtons {
     display: flex;
-    flex-direction: column;
+    gap: 10px;
+    flex-direction: row;
     align-content: flex-end;
+    justify-content: center;
 }
