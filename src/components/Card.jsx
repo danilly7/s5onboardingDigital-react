@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ButtonNext } from './ButtonNext';
 import { ButtonPrevious } from './ButtonPrevious';
 import { Indicator } from './Indicator';
+import { Fade } from 'react-reveal';
 
 export const Card = () => {
     const [step, setStep] = useState(0);
@@ -30,24 +31,24 @@ export const Card = () => {
 
     return (
         <section className={styles.card}>
-
-            <div className={styles.cardImageSection}>
-                <img
-                    className={styles.cardImage}
-                    src={currentCardData.image}
-                    alt={currentCardData.alt}
-                    style={{ backgroundColor: currentCardData.bgColor }}
-                />
-            </div>
-            <div className={styles.cardTextSection}>
-                <div className={styles.cardTitle}>
-                    <strong>{currentCardData.title}</strong>
+            <Fade key={step} duration={1700}>
+                <div className={styles.cardImageSection}>
+                    <img
+                        className={styles.cardImage}
+                        src={currentCardData.image}
+                        alt={currentCardData.alt}
+                        style={{ backgroundColor: currentCardData.bgColor }}
+                    />
                 </div>
-                <div className={styles.cardInfo}>
-                    <span>{currentCardData.description}</span>
+                <div className={styles.cardTextSection}>
+                    <div className={styles.cardTitle}>
+                        <strong>{currentCardData.title}</strong>
+                    </div>
+                    <div className={styles.cardInfo}>
+                        <span>{currentCardData.description}</span>
+                    </div>
                 </div>
-            </div>
-
+            </Fade>
             <div className={styles.cardButtonsIndicatorsSection}>
                 <div className={styles.cardIndicators}>
                     <Indicator totalSteps={tutorialData.length} currentStep={step} onIndicator={goToStep} />
