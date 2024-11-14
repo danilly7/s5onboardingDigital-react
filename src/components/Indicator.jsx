@@ -15,16 +15,17 @@ const Circle = styled.div`
   transition: background-color 0.3s ease;
 `;
 
-export const Indicator = ({ totalSteps, currentStep }) => {
+export const Indicator = ({ totalSteps, currentStep, onIndicator }) => {
 
-    const steps = Array.from({length: totalSteps}, (_,index) => index);
+    const steps = Array.from({ length: totalSteps }, (_, index) => index);
 
-    return(
+    return (
         <IndicatorWrapper>
-            {steps.map((stepIndex)=>(
+            {steps.map((stepIndex) => (
                 <Circle
-                key={stepIndex}
-                isActive={stepIndex=== currentStep} 
+                    key={stepIndex}
+                    isActive={stepIndex === currentStep}
+                    onClick={() => onIndicator(stepIndex)}
                 />
             ))}
         </IndicatorWrapper>
@@ -34,4 +35,5 @@ export const Indicator = ({ totalSteps, currentStep }) => {
 Indicator.propTypes = {
     totalSteps: PropTypes.number,
     currentStep: PropTypes.number,
+    onIndicator: PropTypes.func.isRequired,
 };

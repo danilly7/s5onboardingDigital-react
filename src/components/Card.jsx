@@ -3,10 +3,9 @@ import { tutorialData } from "../data/tutorialData";
 import { useState } from 'react';
 import { ButtonNext } from './ButtonNext';
 import { ButtonPrevious } from './ButtonPrevious';
-import { Indicator } from './Indicators';
+import { Indicator } from './Indicator';
 
 export const Card = () => {
-
     const [step, setStep] = useState(0);
 
     const handleClickNext = () => {
@@ -23,10 +22,15 @@ export const Card = () => {
         });
     };
 
+    const goToStep = (stepIndex) => {
+        setStep(stepIndex);
+    }
+
     const currentCardData = tutorialData[step];
 
     return (
         <section className={styles.card}>
+
             <div className={styles.cardImageSection}>
                 <img
                     className={styles.cardImage}
@@ -46,7 +50,7 @@ export const Card = () => {
 
             <div className={styles.cardButtonsIndicatorsSection}>
                 <div className={styles.cardIndicators}>
-                    <Indicator totalSteps={tutorialData.length} currentStep={step} />
+                    <Indicator totalSteps={tutorialData.length} currentStep={step} onIndicator={goToStep} />
                 </div>
                 <div className={styles.cardButtons}>
                     {step === 0 ? (
