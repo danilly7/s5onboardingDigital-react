@@ -1,37 +1,54 @@
 import styles from './Card.module.css';
 import { tutorialData } from "../data/tutorialData";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ButtonNext } from './ButtonNext';
 import { ButtonPrevious } from './ButtonPrevious';
 import { Indicator } from './Indicator';
-import { Fade } from 'react-reveal';
 
 export const Card = () => {
     const [step, setStep] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+    const [currentStep, setCurrentStep] = useState(0);
 
     const handleClickNext = () => {
-        setStep((prevStep) => (prevStep + 1) % tutorialData.length);
+        setIsVisible(false);
+        setTimeout(() => {
+            setStep((prevStep) => (prevStep + 1) % tutorialData.length);
+            setIsVisible(true);
+        }, 500);
     };
 
     const handleClickPrevious = () => {
-        setStep((prevStep) => {
-            if (prevStep === 0) {
-                return tutorialData.length - 1;
-            } else {
-                return (prevStep - 1) % tutorialData.length;
-            }
-        });
+        setIsVisible(false);
+        setTimeout(() => {
+            setStep((prevStep) => {
+                if (prevStep === 0) {
+                    return tutorialData.length - 1;
+                } else {
+                    return (prevStep - 1) % tutorialData.length;
+                }
+            });
+            setIsVisible(true);
+        }, 500);
     };
 
     const goToStep = (stepIndex) => {
-        setStep(stepIndex);
-    }
+        setIsVisible(false);
+        setTimeout(() => {
+            setStep(stepIndex);
+            setIsVisible(true);
+        }, 500);
+    };
 
-    const currentCardData = tutorialData[step];
+    useEffect(() => {
+        setCurrentStep(step);
+    }, [step]);
+
+    const currentCardData = tutorialData[currentStep];
 
     return (
         <section className={styles.card}>
-            <Fade key={step} duration={1700}>
+            <div className={`${styles.cardContent} ${isVisible ? styles.visible : ''}`}>
                 <div className={styles.cardImageSection}>
                     <img
                         className={styles.cardImage}
@@ -48,7 +65,7 @@ export const Card = () => {
                         <span>{currentCardData.description}</span>
                     </div>
                 </div>
-            </Fade>
+            </div>
             <div className={styles.cardButtonsIndicatorsSection}>
                 <div className={styles.cardIndicators}>
                     <Indicator totalSteps={tutorialData.length} currentStep={step} onIndicator={goToStep} />

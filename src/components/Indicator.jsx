@@ -7,11 +7,11 @@ const IndicatorWrapper = styled.div`
 `;
 
 const Circle = styled.div`
-  width: ${({ isActive }) => (isActive ? '17px' : '10px')};;
+  width: ${({ $isActive }) => ($isActive ? '17px' : '10px')};;
   height: 10px;
   border-radius: 50%;
-  background-color: ${({ isActive }) => (isActive ? 'black' : 'grey')};
-  cursor: ${({ isActive }) => (isActive ? '' : 'pointer')};;
+  background-color: ${({ $isActive }) => ($isActive ? 'black' : 'grey')};
+  cursor: ${({ $isActive }) => ($isActive ? '' : 'pointer')};;
   transition: background-color 0.3s ease;
 `;
 
@@ -24,7 +24,7 @@ export const Indicator = ({ totalSteps, currentStep, onIndicator }) => {
             {steps.map((stepIndex) => (
                 <Circle
                     key={stepIndex}
-                    isActive={stepIndex === currentStep}
+                    $isActive={stepIndex === currentStep}
                     onClick={() => onIndicator(stepIndex)}
                 />
             ))}
