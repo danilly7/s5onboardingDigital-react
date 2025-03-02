@@ -1,4 +1,4 @@
-# SPRING 5. REACT - S5.Onboarding digital (React)
+# SPRINT 5. REACT - S5.Onboarding digital (React)
 ## Descripción del proyecto
 
 Este proyecto es una aplicación interactiva desarrollada en React que guía al usuario a través de un proceso de onboarding digital. Incluye componentes dinámicos como indicadores, transiciones suaves y botones de navegación para garantizar una experiencia intuitiva y atractiva.
